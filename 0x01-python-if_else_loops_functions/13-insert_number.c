@@ -1,5 +1,11 @@
 #include "lists.h"
-
+/*
+ * insert_node - inserts a new node sorted by
+ * numeric weight
+ * @head: address of head
+ * @number: data to add to the new node
+ * Return: NULL | newnode
+ */
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *temp = *head; /* Keep a copy of where the list starts at */
@@ -9,8 +15,14 @@ listint_t *insert_node(listint_t **head, int number)
 	if (*head == NULL || head == NULL)
 		return (NULL);
 
+	if (new == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+
 	/* Go through the linked list up until the list has < number */
-	for (; temp->n <= number; temp = temp->next)
+	for (; temp->next->n <= number; temp = temp->next)
 	{
 		;
 	}
