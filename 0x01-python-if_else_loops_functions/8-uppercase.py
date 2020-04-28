@@ -6,6 +6,6 @@ def uppercase(str):
             switch = (ord(str[i]) - 32)
         else:
             switch = ord(str[i])
-	# Print the updated value of switch
+        # Print the updated value of switch
         print("{:c}".format(switch), end='')
     print("")
