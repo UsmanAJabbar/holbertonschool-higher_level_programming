@@ -14,7 +14,7 @@ listint_t *insert_node(listint_t **head, int number)
 	{
 		;
 	}
-	secondhalf = temp; /* Keep a copy of the next list */
+	secondhalf = temp->next; /* Keep a copy of the next list */
 
 	/* Connect current temp->next to the new node */
 	temp->next = new;
