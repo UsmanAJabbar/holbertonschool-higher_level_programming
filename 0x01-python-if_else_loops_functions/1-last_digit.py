@@ -3,10 +3,12 @@ import random
 
 number = random.randint(-10000, 10000)
 if number < 0:
-    mnumber = number * -1
+    mnumber = number * - 1
+    ld = mnumber % 10
+    ld = ld * - 1
 else:
-    mnumber = number
-ld = mnumber % 10
+    ld = number % 10
+
 firsthalf = "Last digit of {:d} is {:d}"
 
 if ld > 5:
