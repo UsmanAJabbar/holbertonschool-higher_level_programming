@@ -12,4 +12,3 @@ for alphabets in range(122, 96, -1):
     # switch stores the captial/lower
     switch = alphabets + alpha
     print("{:c}".format(switch), end='')
-print("")
