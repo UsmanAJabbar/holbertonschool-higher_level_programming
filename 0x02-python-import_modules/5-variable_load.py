@@ -4,4 +4,4 @@ from variable_load_5 import a
 
 # Import Guard
 if __name__ == '__main__':
-	print("{}".format(a))
+    print("{}".format(a))
