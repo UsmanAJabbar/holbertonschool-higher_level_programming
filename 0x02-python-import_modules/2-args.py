@@ -10,6 +10,7 @@ if __name__ == '__main__':
         print("{:d} arguments.".format(argc))
     elif argc == 1:
         print("{:d} argument:".format(argc))
+        print("{:d}: {}".format((argc), argv[argc]))
     elif argc >= 2:
         print("{:d} arguments:".format(argc))
         # Print all of the words ( + 1 to print exclude file name )
