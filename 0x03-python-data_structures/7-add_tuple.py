@@ -21,7 +21,6 @@ def add_tuple(tuple_a=(), tuple_b=()):
         else:
             yeet_b = tuple_b
 
-        print("yeet_a = {}".format(yeet_a))
         add1 = yeet_a[0] + yeet_b[0]
         add2 = yeet_a[1] + yeet_b[1]
         output = (add1, add2)
