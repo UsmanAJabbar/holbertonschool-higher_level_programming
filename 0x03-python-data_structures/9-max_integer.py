@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 
-# Loop through all of the
-# list and save them into a variable
-# that variable must be updated if
-# the next item in the list is larger
-# than the value in the current variable
-# Then return that variable
 
 def max_integer(my_list=[]):
-    bignumba = 0
+    if my_list:
+        bignumba = 0  # Initializes var to 0
+        # Loop through all the elements
+        for elements in range(len(my_list)):
+            # If list's element is larger than
+            # the last one, add it to our var
+            if my_list[elements] > bignumba:
+                bignumba = my_list[elements]
 
-    for elements in range(len(my_list)):
-        if my_list[elements] > bignumba:
-            bignumba = my_list[elements]
-    return bignumba
+        return bignumba
+
+    else:
+        return None
