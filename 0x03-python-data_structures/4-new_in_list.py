@@ -9,7 +9,7 @@ def new_in_list(my_list, idx, element):
         if idx < 0:
             return(new_list)
 
-        elementcount = len(my_list)
+        elementcount = len(my_list) - 1
         if idx > elementcount:
             return(new_list)
 
