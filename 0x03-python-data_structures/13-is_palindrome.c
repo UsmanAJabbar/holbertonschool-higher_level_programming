@@ -25,8 +25,12 @@ int is_palindrome(listint_t **head)
 	for (begin = 0, end = listlen - 1; begin < listlen / 2; begin++, end--)
 	{
 		if (array[begin] != array[end])
+		{
+			free(array);
 			return (0); /* 0 if not a palindrome */
+		}
 	}
+	free(array);
 	return (1); /* It was a palindrome */
 }
 
