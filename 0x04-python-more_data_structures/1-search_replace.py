@@ -11,4 +11,4 @@ def search_replace(my_list, search, replace):
         if new_list[indexes] == search:
             new_list[indexes] = replace
             return new_list
-    return None
+    return my_list
