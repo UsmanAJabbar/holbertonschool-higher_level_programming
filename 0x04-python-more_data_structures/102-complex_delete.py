@@ -3,7 +3,7 @@ def complex_delete(a_dictionary, value):
 
     copied = dict(a_dictionary)
     delcount = 0  # Number of keys deleted
-    
+
     # Loop through the dictionary, if value's
     # found, then delete and then continue search
     for keys, v in copied.items():
