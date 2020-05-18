@@ -4,7 +4,7 @@ def safe_print_integer_err(value):
     try:
         print("{:d}".format(value))
         return True
-    except ValueError:
+    except:
         err = "Exception: Unknown format code 'd' for object of type "
         if isinstance(value, int):
             objtype = "'int'"
@@ -14,5 +14,5 @@ def safe_print_integer_err(value):
             objtype = "'str'"
         elif isinstance(value, float):
             objtype = "'float'"
-        print(err + objtype)
+        stderr.write(err + objtype + '\n')
         return False
