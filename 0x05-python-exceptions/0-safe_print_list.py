@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def safe_print_list(my_list=[], x=0):
     elementcount = 0    # Counter to count the number of elements printed
 
@@ -8,8 +7,8 @@ def safe_print_list(my_list=[], x=0):
             print(my_list[elements], end='')
             elementcount += 1
 
-        except IndexError:  # If x is greater than the number of elements in my_list, break
+        except IndexError:
                 break
     print()
-    
-    return elementcount # Return the number of elements successfully parsed
+
+    return elementcount  # Return the number of elements successfully parsed
