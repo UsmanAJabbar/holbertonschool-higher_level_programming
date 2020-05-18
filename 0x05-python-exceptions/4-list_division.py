@@ -13,7 +13,7 @@ def list_division(my_list_1, my_list_2, list_length):
         except TypeError:
             print("wrong type")
             quotient = 0
-        finally:
-            result_list.append(quotient)
+        finally:                          # Floats are not iterable, hence, +=
+            result_list.append(quotient)  # can't be used
 
     return result_list
