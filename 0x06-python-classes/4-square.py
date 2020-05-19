@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""Square Class"""
+
+
 class Square:
+    """ Square Initialization """
     def __init__(self, size=0):
         """
         Method that initializes the class and checks
@@ -15,10 +19,10 @@ class Square:
         self.__size = size
 
     @property
-        """
-        Method that retrieves the current size for
-        the setter to work with
-        """
+    """
+    Method that retrieves the current size for
+    the setter to work with
+    """
     def size(self):
         return self.__size
 
