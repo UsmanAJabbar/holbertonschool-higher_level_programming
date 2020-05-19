@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 class Square:
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """
         Method that initializes the class and checks
         for good input
@@ -13,11 +13,6 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-
-    def __init__(self, position=(0, 0)):
-        """
-        Method that initialized the poisition function
-        """
         self.__position = position
 
     @property
@@ -65,9 +60,12 @@ class Square:
         if self.__size == 0:
             print()
             return
+        if self.__position[1] > 0:
+            print("\n" * (self.__position[1] - 1))
         for height in range(self.__size):
-            for width in range(self.__size):
+            if self.__position[0] > 0:
                 for spaces in range(self.__position[0]):
                     print(" ", end="")
+            for width in range(self.__size):
                 print("#", end="")
             print()
