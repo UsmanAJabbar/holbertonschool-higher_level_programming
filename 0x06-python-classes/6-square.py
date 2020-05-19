@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+""" Class Square """
+
+
 class Square:
+    """Initializing Square"""
     def __init__(self, size=0, position=(0, 0)):
         """
         Method that initializes the class and checks
