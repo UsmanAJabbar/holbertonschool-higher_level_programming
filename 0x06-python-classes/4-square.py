@@ -19,11 +19,8 @@ class Square:
         self.__size = size
 
     @property
-    """
-    Method that retrieves the current size for
-    the setter to work with
-    """
     def size(self):
+        """Method that retrieves the current size"""
         return self.__size
 
     @size.setter
