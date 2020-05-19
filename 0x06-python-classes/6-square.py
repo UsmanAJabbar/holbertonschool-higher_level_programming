@@ -14,6 +14,15 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = size
 
+        def __init__(self, position=(0, 0)):
+        """
+        Method that initialized the poisition function
+        """
+        if type(position) is not tuple:
+            raise TypeError("position must be a tuple")
+        if position[0] < 0 or position[1] < 0:
+            raise TypeError
+
     @property
     def size(self):
         """
@@ -41,6 +50,9 @@ class Square:
         Method that returns the area
         """
         return self.__size ** 2
+
+    def position(self)
+        return self.__position
 
     def my_print(self):
         """ Method that prints out a square size * size """
