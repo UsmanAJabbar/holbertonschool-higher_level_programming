@@ -12,7 +12,7 @@ def add_integer(a, b=98):
         b = If not defined, defaults to 98
     """
     # Check if we have good inputs, a must exist to continue
-    if a is None:
+    if not a:
         raise TypeError("add_integer() missing 1 required positional argument: 'a'")
 
     # If a exists, check data types
