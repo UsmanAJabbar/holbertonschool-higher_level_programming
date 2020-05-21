@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 >>> add_integer = __import__('0-add_integer').add_integer
 
+################################
+# General compute tests
+################################
 >>> add_integer(2, 4)
 6
 
@@ -16,6 +19,9 @@
 >>> add_integer(5.5, 20.2)
 24
 
+################################
+# Tests with all data types in a
+################################
 >>> add_integer("Yeet")
 Traceback(most recent call last):
     ...
@@ -39,6 +45,9 @@ TypeError: a must be an integer
 >>> add_integer(-20.5)
 -20
 
+###############################
+# No inputs in a
+###############################
 >>> add_integer()
 Traceback(most recent call last):
     ...
