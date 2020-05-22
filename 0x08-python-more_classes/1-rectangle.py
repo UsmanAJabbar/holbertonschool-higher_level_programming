@@ -9,7 +9,7 @@ class Rectangle:
     ----------------
     """
 
-    def __init___(self, width=0, height=0)
+    def __init__(self, width=0, height=0):
         """
         ----------------
         METHOD: __INIT__
