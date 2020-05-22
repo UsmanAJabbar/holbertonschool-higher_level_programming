@@ -15,13 +15,13 @@ def print_square(size):
     Args:
         @size: size defined by main
     """
-    if type(size) is not int or type(size) is not float:
+    if type(size) not in [float, int]:
         raise TypeError("size must be an integer")
 
     if type(size) is float and size < 0:
         raise TypeError("size must be an integer")
 
-    if type(size) is int and size < 0:
+    if size < 0:
         raise ValueError("size must be >= 0")
 
     size = int(size)  # Get rid of trailing decimal points
@@ -30,5 +30,5 @@ def print_square(size):
     for height in range(size):
         if size == 0:
             break
-        print("#", end="") * size
+        print("#" * size, end="")
         print()
