@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""'YA GAAD DAMN RIGHT'"""
+
+
 def say_my_name(first_name, last_name=""):
     """
     -------------------
@@ -20,14 +23,10 @@ def say_my_name(first_name, last_name=""):
         first_name = first name
         last_name = last name
     """
-    # Check if first name exists
-    if not first_name:
-        raise TypeError("first_name must be a string")
-
     # Checks if variables are strings
     if type(first_name) is not str:
         raise TypeError("first_name must be a string")
     if type(last_name) is not str:
         raise TypeError("last_name must be a string")
 
-    print("My name is {:s} {:s}".format(first_name, last_name))
+    print("My name is {} {}".format(first_name, last_name))

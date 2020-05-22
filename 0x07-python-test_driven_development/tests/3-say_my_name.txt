@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+###############
+# General Tests
+###############
+>>> say_my_name("Heisenberg")
+My name is Heisenberg 
+
+>>> say_my_name("Usman", "Abdul Jabbar")
+My name is Usman Abdul Jabbar
+
+#################
+# Bad input tests
+#################
+>>> say_my_name(1)
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string

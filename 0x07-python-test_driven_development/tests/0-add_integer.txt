@@ -17,38 +17,56 @@
 11
 
 >>> add_integer(5.5, 20.2)
-24
+25
 
 ################################
 # Tests with all data types in a
 ################################
 >>> add_integer("Yeet")
-Traceback(most recent call last):
+Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+
 
 >>> add_integer({})
-Traceback(most recent call last):
+Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+
 
 >>> add_integer([])
-Traceback(most recent call last):
+Traceback (most recent call last):
     ...
 TypeError: a must be an integer
+
 
 >>> add_integer('a')
-Traceback(most recent call last):
+Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
+
 >>> add_integer(-20.5)
--20
+78
 
 ###############################
 # No inputs in a
 ###############################
 >>> add_integer()
-Traceback(most recent call last):
+Traceback (most recent call last):
     ...
 TypeError: add_integer() missing 1 required positional argument: 'a'
+
+###############################
+# Test cases for b
+###############################
+>>> add_integer(25, "Yeet")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+
+>>> add_integer(25, {})
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer

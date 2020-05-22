@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Matrix Divided"""
+
+
 def matrix_divided(matrix, div):
     """
     ----------------------
@@ -20,20 +23,30 @@ def matrix_divided(matrix, div):
     """
 
     matrixerror = "matrix must be a matrix (list of lists) of integers/floats"
+    emptyargs = "matrix_divided() missing 2 required positional arguments\
+: 'matrix' and 'div'"
 
     # EDGE CASES / RAISE ERRORS
-    if type(matrix[0]) is not list:
+    if matrix is None and div is None:
+        raise TypeError(emptyargs)
+    if matrix is None or type(matrix) is not list:
         raise TypeError(matrixerror)
 
     if type(div) not in [float, int]:
         raise TypeError("div must be a number")
-    if div == 0:
+    if div is None or div == 0:
         raise ZeroDivisionError("division by zero")
 
     # VALIDATE SIZE OF MATRIX + ELEMENT DATA TYPES
     listcount = len(matrix)     # Find the number of individual lists
+
+    if listcount < 1:           # Should fail on [] not on [[1], [2]]
+        raise TypeError(matrixerror)
+
     elementcount = 0            # Initialized to 0 for the for loop
     for lists in matrix:        # Finds the number of elements the matrix
+        if type(lists) is not list:                 # type(list) check
+            raise TypeError(matrixerror)
         for elements in lists:
             if type(elements) not in [float, int]:  # Validates data types
                 raise TypeError(matrixerror)
@@ -43,9 +56,9 @@ def matrix_divided(matrix, div):
         raise TypeError("Each row of the matrix must have the same size")
 
     # START DIVIDING AND RETURN THE NEW LIST
-    divided_matrix = []
+    div_mat = []
+    div = int(div)
+    for nums in matrix:
+        div_mat.append(list(map(lambda nums: round(nums / div, 2), nums)))
 
-    for elements in matrix:
-        divided_matrix.append(list(map(lambda elements: round(elements / div, 2), elements)))
-
-    return divided_matrix
+    return div_mat
