@@ -1,6 +1,16 @@
 #!/usr/bin/python3
 >>> add_integer = __import__('0-add_integer').add_integer
 
+
+#################
+# Docstring Check
+#################
+>>> len(__import__('0-add_integer').__doc__) > 0
+True
+
+>>> len(__import__("0-add_integer").add_integer.__doc__) > 0
+True
+
 ################################
 # General compute tests
 ################################
