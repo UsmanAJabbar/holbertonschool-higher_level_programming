@@ -35,4 +35,4 @@ def text_indentation(text):
     for indexes in range(len(text)):
         bigtext += text[indexes]
 
-    print(bigtext)
+    print(bigtext, end="")

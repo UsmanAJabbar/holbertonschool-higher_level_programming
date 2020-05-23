@@ -3,10 +3,8 @@
 
 >>> text_indentation("Text")
 Text
->>> text_indentation("Yeeticus Yooticus. New Line")
-Yeeticus Yooticus.
-<BLANKLINE>
-New Line
+>>> text_indentation("Yeeticus Yooticus")
+Yeeticus Yooticus
 
 >>> text_indentation()
 Traceback (most recent call last):
