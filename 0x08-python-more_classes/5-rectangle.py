@@ -71,6 +71,18 @@ class Rectangle:
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
+        """
+        ---------------
+        METHOD: __DEL__
+        ---------------
+        Description:
+            When the class is being deleted,
+            print a custom message.
+        Exception/Notes:
+            Nil
+        Args:
+            @self: refers back to the class
+        """
         print("Bye rectangle...")
 
     @property
