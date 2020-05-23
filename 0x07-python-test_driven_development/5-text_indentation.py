@@ -17,17 +17,21 @@ def text_indentation(text):
     Args:
         @text: Text input from main
     """
-    breakcharacters = [".", "?", ":"]
 
     if type(text) is not str:
         raise TypeError("text must be a string")
 
-    flag = 0
+    breakcharacters = [".", "?", ":"]
+    bigtext = ""
 
+    # MODIFY THE ORIGINAL STRING
+    text = list(text)
     for indexes in range(len(text)):
         if text[indexes] in breakcharacters:
-            print(text[indexes + flag])
-            if indexes < len(text):
-                flag += 1
-            continue
-        print(text[indexes], end="")
+            text[indexes + 1] = '\n\n'
+
+    # ADD MODIFIED TEXT TO BUFF
+    for indexes in range(len(text)):
+        bigtext += text[indexes]
+
+    print(bigtext)
