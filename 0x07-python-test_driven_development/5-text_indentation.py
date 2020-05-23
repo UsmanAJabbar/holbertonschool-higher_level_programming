@@ -30,6 +30,7 @@ def text_indentation(text):
         if text[indexes] in breakcharacters:
             text[indexes + 1] = '\n\n'
 
+
     # ADD MODIFIED TEXT TO BUFF
     for indexes in range(len(text)):
         bigtext += text[indexes]

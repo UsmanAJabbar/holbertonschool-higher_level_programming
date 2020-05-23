@@ -31,7 +31,5 @@ def print_square(size):
 
     # Print Square
     for height in range(size):
-        if size == 0:
-            break
         print("#" * size, end="")
         print()

@@ -1,6 +1,15 @@
 #!/usr/bin/python3
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
+#################
+# Docstring Check
+#################
+>>> len(__import__('2-matrix_divided').__doc__) > 0
+True
+
+>>> len(__import__("2-matrix_divided").matrix_divided.__doc__) > 0
+True
+
 ###############
 # GENERAL TESTS
 ###############
