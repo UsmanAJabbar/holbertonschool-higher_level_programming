@@ -10,6 +10,12 @@ My name is Heisenberg
 >>> say_my_name("Usman", "Abdul Jabbar")
 My name is Usman Abdul Jabbar
 
+>>> say_my_name("Yeet")
+My name is Yeet
+
+>>> say_my_name("I'm", "Batman")
+My name is I'm Batman
+
 #################
 # Bad input tests
 #################
