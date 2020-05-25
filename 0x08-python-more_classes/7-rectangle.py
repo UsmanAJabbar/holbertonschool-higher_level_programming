@@ -47,6 +47,8 @@ class Rectangle:
             attributes.
         """
         buffer = ""
+        if self.__height is 0 or self.__width is 0:
+            return buffer
         for elements in range(self.__height):
             buffer += (str(self.print_symbol) * self.__width)
             if elements < self.__height - 1:
@@ -197,4 +199,6 @@ class Rectangle:
         Args:
             @self: refers back to the class
         """
+        if self.__width is 0 or self.__height:
+            return 0
         return (2 * self.__width) + (2 * self.__height)
