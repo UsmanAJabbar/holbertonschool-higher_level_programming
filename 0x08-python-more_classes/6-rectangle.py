@@ -47,7 +47,7 @@ class Rectangle:
         """
         buffer = ""
         if self.__height is 0 or self.__width is 0:
-            return buffer        
+            return buffer
         for elements in range(self.__height):
             buffer += ("#" * self.__width)
             if elements < self.__height - 1:
