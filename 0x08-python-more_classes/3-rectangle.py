@@ -156,4 +156,6 @@ class Rectangle:
         Args:
             @self: refers back to the class
         """
+        if __self.width is 0 or self.__height is 0:
+                return 0
         return (2 * self.__width) + (2 * self.__height)
