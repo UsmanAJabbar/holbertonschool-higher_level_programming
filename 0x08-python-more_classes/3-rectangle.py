@@ -43,6 +43,8 @@ class Rectangle:
             attributes.
         """
         buffer = ""
+        if self.__width is 0 or __self.__height is 0:
+            return buffer
         for elements in range(self.__height):
             buffer += ("#" * self.__width)
             if elements < self.__height - 1:
