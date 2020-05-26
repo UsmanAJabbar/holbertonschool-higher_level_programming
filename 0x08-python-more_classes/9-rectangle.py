@@ -200,19 +200,19 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-    """
-    --------------
-    METHOD: SQUARE
-    --------------
-    Description:
-        Creates a new square based off of
-        the current class(Rectangle)
-    Exceptions/Notes:
-        Nil
-    Args:
-        @cls: Refers to the current class
-        @size: takes size as input
-    """
+        """
+        --------------
+        METHOD: SQUARE
+        --------------
+        Description:
+            Creates a new square based off of
+            the current class(Rectangle)
+        Exceptions/Notes:
+            Nil
+        Args:
+            @cls: Refers to the current class
+            @size: takes size as input
+        """
         return cls(size, size) # Rectangle(width, height)
 
     def area(self):
