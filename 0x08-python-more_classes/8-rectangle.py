@@ -172,6 +172,32 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        -----------------------
+        METHOD: BIGGER OR EQUAL
+        -----------------------
+        Description:
+            Bigger or equal returns the larger rect
+            amongst two rectangles after comparing
+            their areas
+        Exceptions/Notes:
+            If input is not of type, class(rect),
+            then raise TypeError.
+        Args:
+            @rect_1: rectangle 1
+            @rect_2: rectangle 2
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() == rect_2.area() or rect_1.area() > rect_2.area():
+            return rect_1
+        elif rect_2.area() > rect_1.area():
+            return rect_2
+
     def area(self):
         """
         ------------
