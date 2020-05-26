@@ -213,7 +213,7 @@ class Rectangle:
             @cls: Refers to the current class
             @size: takes size as input
         """
-        return cls(size, size) # Rectangle(width, height)
+        return cls(size, size)  # Rectangle(width, height)
 
     def area(self):
         """
