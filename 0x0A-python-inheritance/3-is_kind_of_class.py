@@ -2,7 +2,7 @@
 def is_kind_of_class(obj, a_class):
     """
     ---------------------
-    METHOD: IS SAME CLASS
+    METHOD: KIND OF CLASS
     ---------------------
     Description:
         Verifies whether two objects given are of the
