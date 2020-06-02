@@ -11,4 +11,4 @@ def inherits_from(obj, a_class):
         @obj: object
         @a_class: class
     """
-    return True if issubclass(type(obj), a_class) else False
+    return isinstance(obj, a_class) and type(obj) != a_class
