@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A Random Class, Move On"""
 
+
 class MyList(list):
     """"
     ----------
