@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""I DON'T GET WHY THIS IS A REQ"""
+
+
 def is_same_class(obj, a_class):
     """
     ---------------------
