@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""ADDED A DOCSTRING JUST BECAUSE OF A SAKE OF IT"""
+
+
 def inherits_from(obj, a_class):
     """
     -------------------------
