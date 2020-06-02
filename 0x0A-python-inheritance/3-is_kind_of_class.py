@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""THERE's LITERALLY NO REASON TO PUT A DOCSTRING HERE"""
+
+
 def is_kind_of_class(obj, a_class):
     """
     ---------------------
