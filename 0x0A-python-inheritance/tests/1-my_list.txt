@@ -34,3 +34,9 @@ TypeError: print_sorted() takes 1 positional argument but 2 were given
 >>> my_list.append(-765)
 >>> my_list.print_sorted()
 [-765, -256, -23, -21, -5]
+
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
