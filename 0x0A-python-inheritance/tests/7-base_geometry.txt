@@ -48,3 +48,15 @@ TypeError: 25 must be an integer
 Traceback (most recent call last):
     ...
 ValueError: WOT must be greater than 0
+
+>>> file_doc = __import__('7-base_geometry').__doc__
+>>> len(file_doc) > 0
+True
+
+>>> class_doc = __import__('7-base_geometry').BaseGeometry.__doc__
+>>> len(class_doc) > 0
+True
+
+>>> func_doc = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+>>> len(func_doc) > 0
+True
