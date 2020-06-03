@@ -20,12 +20,11 @@ def read_lines(filename="", nb_lines=0):
         # print the whole buffer
         if nb_lines <= 0:
             print(buffer.read(), end="")
-            return 0
 
-        # Else, print up until nblines
-        linecount = 0
-        for strings in buffer:
-            print(strings, end="")
-            linecount += 1
-            if linecount > nb_lines:
-                return 0
+        else:
+            linecount = 0
+            for strings in buffer:
+                print(strings, end="")
+                linecount += 1
+                if linecount > nb_lines:
+                    return 0
