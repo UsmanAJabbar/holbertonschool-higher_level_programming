@@ -26,5 +26,5 @@ def read_lines(filename="", nb_lines=0):
             for strings in buffer:
                 print(strings, end="")
                 linecount += 1
-                if linecount > nb_lines:
+                if linecount == nb_lines:
                     break
