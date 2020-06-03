@@ -11,8 +11,10 @@ class MyInt(int):
 
     def __eq__(self, other):
         """The not equal rebel"""
-        return not int(self)
+        if isinstance(other, self.__class__):
+            return self.__dict__ == other.__dict__
+        return False
 
     def __ne__(self, other):
         """The equal rebel"""
-        return int(self) == int(self)
+        return not self.__eq__(other)
