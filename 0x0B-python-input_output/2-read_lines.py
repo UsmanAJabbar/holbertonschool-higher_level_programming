@@ -18,7 +18,7 @@ def read_lines(filename="", nb_lines=0):
     with open(filename, mode="r", encoding="utf-8") as buffer:
         # If this method is called without nb_lines defined
         # print the whole buffer
-        if nb_lines <= 0 or nb_lines > len(buffer.readlines()):
+        if nb_lines <= 0:
             print(buffer.read(), end="")
             return 0
 
