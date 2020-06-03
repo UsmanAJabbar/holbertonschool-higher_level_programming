@@ -27,4 +27,3 @@ def read_lines(filename="", nb_lines=0):
                 print(strings, end="")
                 linecount += 1
                 if linecount > nb_lines:
-                    return 0
