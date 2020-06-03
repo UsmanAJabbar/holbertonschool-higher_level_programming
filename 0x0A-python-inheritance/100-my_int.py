@@ -10,9 +10,9 @@ class MyInt(int):
     """
 
     def __eq__(self, other):
-    """The not equal rebel"""
+        """The not equal rebel"""
         return not int(self)
 
     def __ne__(self, other):
-    """The equal rebel"""
+        """The equal rebel"""
         return int(self) == int(self)
