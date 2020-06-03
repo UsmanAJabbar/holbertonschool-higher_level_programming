@@ -15,3 +15,36 @@ TypeError: name must be an integer
 Traceback (most recent call last):
 	...
 TypeError: name must be an integer
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 25)
+>>> bg.integer_validator("my_int", 25.2)
+Traceback (most recent call last):
+    ...
+TypeError: my_int must be an integer
+
+>>> bg.integer_validator("my_int", float(NaN))
+Traceback (most recent call last):
+    ...
+NameError: name 'NaN' is not defined
+
+>>> bg.integer_validator("my_int")
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>> bg.integer_validator(25, )
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator(25, "WOT")
+Traceback (most recent call last):
+    ...
+TypeError: 25 must be an integer
+
+>>> bg.integer_validator("WOT", 0)
+Traceback (most recent call last):
+    ...
+ValueError: WOT must be greater than 0
