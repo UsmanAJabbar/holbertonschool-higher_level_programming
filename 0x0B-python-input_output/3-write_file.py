@@ -14,6 +14,6 @@ def write_file(filename="", text=""):
         @text: text to be written to the
         new file
     """
-    with open(filename, mode = "w", encoding="utf-8") as buffer:
+    with open(filename, mode="w", encoding="utf-8") as buffer:
         charcount = buffer.write(text)
     return charcount
