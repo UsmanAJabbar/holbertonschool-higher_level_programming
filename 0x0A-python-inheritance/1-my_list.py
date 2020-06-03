@@ -23,4 +23,5 @@ class MyList(list):
         Args:
             @self: inherits the input from self
         """
-        print(sorted(self))
+        copy = self[:]
+        print(sorted(copy))
