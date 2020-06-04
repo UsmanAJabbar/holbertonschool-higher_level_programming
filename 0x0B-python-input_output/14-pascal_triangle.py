@@ -25,15 +25,15 @@ def pascal_triangle(n):
 
     prev = [1]
     for elements in range(n):
-        list_builder = [1]      # New list always starts with 1
+        list_builder = [1]       # New list always starts with 1
 
-        for i in range(elements):   # Keep a record of elements
-            if (i + 1) == elements:     # If we are at the end
-                list_builder.append(prev[i]) # Copied the last 1
+        for i in range(elements):    # Keep a record of elements
+            if (i + 1) == elements:      # If we are at the end
+                list_builder.append(prev[i])  # Copied the last 1
             else:
                 list_builder.append(prev[i] + prev[i + 1])
 
-        prev = list_builder # Keep a record of prev
-        matrix.append(list_builder) # Append the list to matrix
+        prev = list_builder  # Keep a record of prev
+        matrix.append(list_builder)  # Append the list to matrix
 
     return matrix
