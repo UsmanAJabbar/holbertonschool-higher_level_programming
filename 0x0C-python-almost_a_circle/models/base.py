@@ -80,13 +80,10 @@ class Base:
             @json_string: json string to be
             deserialized
         """
-        deserialized_dump = []
         if json_string is None or len(json_string) == 0:
-            return deserialized_dump
-
-        deserialized = json.loads(json_string)
-
-        return deserialized
+            return []
+        else:
+            return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
