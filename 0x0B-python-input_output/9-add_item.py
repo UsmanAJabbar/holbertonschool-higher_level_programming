@@ -18,7 +18,6 @@ except Exception:
     my_list = []
     save_to_json_file(my_list, "add_item.json")
 
-for elements in range(1, len(argv)):
-    my_list.append(argv[elements])
+my_list += argv[1:]
 
 save_to_json_file(my_list, 'add_item.json')
