@@ -273,3 +273,22 @@ class Rectangle(Base):
                     self.x = kwargs['x']
                 if 'y' in kwargs:
                     self.y = kwargs['y']
+
+    def to_dictionary(self):
+        """
+        ---------------------
+        METHOD: TO DICTIONARY
+        ---------------------
+        Description:
+            Returns a dictionary of the current
+            instance
+        Args:
+            @self: refers back to the class
+        """
+        attr_dict = {}
+        attr_dict['id'] = self.id
+        attr_dict['width'] = self.__width
+        attr_dict['height'] = self.__height
+        attr_dict['x'] = self.__x
+        attr_dict['y'] = self.__y
+        return attr_dict
