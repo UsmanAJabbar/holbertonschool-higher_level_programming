@@ -12,7 +12,6 @@ class Base:
     """
     __nb_objects = 0
 
-
     def __init__(self, id=None):
         """
         ----------------
@@ -132,12 +131,13 @@ class Base:
                     # [class(), class(), class()]
                     # if the file does not exist, return an empty list
                 # MASTER PLAN:
-                # Try opening the file with the try method, if an exception is raised
-                # return an empty list
-                # If the file does exist, then return load the values from the json
-                # file and use the create method to load up those attributes.
-                # Once thats done, then create an empty list then would append the
-                # returns from create.
+                # Try opening the file with the try method, if an exception
+                # is raised, return an empty list
+                # If the file does exist, then return load the values from
+                # the json file and use the create method to load up those
+                # attributes.
+                # Once thats done, then create an empty list then would
+                # append the returns from create.
                 # After all that's done, return the final list
                 json_list_of_dictionaries = []
                 for lines in buffer:
@@ -207,15 +207,22 @@ class Base:
         instance_list = []
 
         try:
-            with open(filename) as serialized_csv_file:
+            with open(filename) as csv_file:
                 # DictReader returns a list of dictionaries
-                python_list_of_dictionaries = csv.DictReader(serialized_csv_file)
+                python_list_of_dictionaries = csv.DictReader(csv_file)
 
                 #  Loop through each dictionary individually and append
                 #  the instances returned by create accordingly
                 for elements in python_list_of_dictionaries:
+
+                    #  Before any appends, convert the values in the dictionary
+                    #  to ints before passing to the create function
+                    for values in elements:
+                        elements[values] = int(elements[values])
+
+                    #  Create and update the values from the updated dicts.
                     instance_list.append(cls.create(**elements))
-                    print(instance_list)
+
                 return instance_list
 
         except FileNotFoundError:
