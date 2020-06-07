@@ -99,6 +99,52 @@ class Base:
             @dictionary: dictionary containing all the
             values to assign onto the new instance
         """
-        dummy = cls(1, 1)  # Added the two neccessary inputs
-        dummy.update(dictionary)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)  # Added the two neccessary inputs
+            dummy.update(**dictionary)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+            dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        ----------------------
+        METHOD: LOAD FROM FILE
+        ----------------------
+        Description:
+            Returns a list of instances using a class.
+        Args:
+            @cls: takes in a class
+        """
+        filename = cls.__name__ + ".json"
+        instance_list = []
+        try:
+            with open(filename) as buffer:
+                # * FROM_JSON_STRING returns a python repr of a JSON file
+                # * CREATE creates a dummy instance and updates its values with
+                # the values defined in a dictonary
+                # TASK -
+                    # The current class method returns a list of instances aka
+                    # [class(), class(), class()]
+                    # if the file does not exist, return an empty list
+                # MASTER PLAN:
+                # Try opening the file with the try method, if an exception is raised
+                # return an empty list
+                # If the file does exist, then return load the values from the json
+                # file and use the create method to load up those attributes.
+                # Once thats done, then create an empty list then would append the
+                # returns from create.
+                # After all that's done, return the final list
+                json_list_of_dictionaries = []
+                for lines in buffer:
+                    json_list_of_dictionaries += (Base.from_json_string(lines))
+
+                for elements in json_list_of_dictionaries:
+                    instance_list.append(cls.create(**elements))
+
+                return instance_list
+
+        except FileNotFoundError:
+                return instance_list
