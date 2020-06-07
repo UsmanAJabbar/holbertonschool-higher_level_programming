@@ -151,40 +151,72 @@ class Base:
         except FileNotFoundError:
                 return instance_list
 
-        @classmethod
-        def save_to_file_csv(cls, list_objs):
-            """
-            ------------------------
-            METHOD: SAVE TO CSV FILE
-            ------------------------
-            Description:
-                Serializes a Python object into CSV
-                format and saves it into a csv file
-            Args:
-                @cls:
-            """
-            filename = cls.__name__ + ".csv"
-            serialized_dump = []
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        ------------------------
+        METHOD: SAVE TO CSV FILE
+        ------------------------
+        Description:
+            Serializes a Python object into CSV
+            format and saves it into a csv file
+        Args:
+            @cls:
+        """
+        filename = cls.__name__ + ".csv"
+        serialized_dump = []
 
-            try:
-                with open(filename, 'w') as csvfile:
-                    if list_objs is not None:
-                        #  Generate the field names based off the class name
-                        if cls.__name__ == "Rectangle":
-                            fields = ['id', 'width', 'height', 'x', 'y']
-                        elif cls.__name__ == "Square":
-                            fields = ['id', 'size', 'x', 'y']
+        try:
+            with open(filename, 'w') as csvfile:
+                if list_objs is not None and type(list_objs) is list:
+                    #  Generate the field names based off the class name
+                    if cls.__name__ == "Rectangle":
+                        fields = ['id', 'width', 'height', 'x', 'y']
+                    elif cls.__name__ == "Square":
+                        fields = ['id', 'size', 'x', 'y']
 
-                        #  Access and append the dictionaries in the instance
-                        for objects in list_objs:
-                            serialized_dump.append(objects.to_dictionary())
+                    #  Access and append the dictionaries in the instance
+                    for objects in list_objs:
+                        serialized_dump.append(objects.to_dictionary())
 
-                        #  Start writing to the file
-                        writer = csv.DictWriter(csvfile, fieldnames=fields)
-                        writer.writeheader()
-                        for dictonaries in serialized_dump:
-                            writer.writerow(dictionaries)
+                    #  Start writing to the file
+                    writer = csv.DictWriter(csvfile, fieldnames=fields)
+                    writer.writeheader()
+                    for dictionaries in serialized_dump:
+                        writer.writerow(dictionaries)
 
-            except FileNotFound:
-                with open(fieldnames, "w") as csvfile:
-                    csvfile.write(serialized_dump)
+        except FileNotFoundError:
+            with open(fieldnames, "w") as csvfile:
+                csvfile.write(serialized_dump)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        ----------------------
+        METHOD: LOAD FROM FILE
+        ----------------------
+        Description:
+            Takes in a CSV as input, reads the values,
+            creates and returns a list of instances based
+            off the attributes and values defined by the
+            csv file.
+        Args:
+            @cls:
+        """
+        filename = cls.__name__ + ".csv"
+        instance_list = []
+
+        try:
+            with open(filename) as serialized_csv_file:
+                # DictReader returns a list of dictionaries
+                python_list_of_dictionaries = csv.DictReader(serialized_csv_file)
+
+                #  Loop through each dictionary individually and append
+                #  the instances returned by create accordingly
+                for elements in python_list_of_dictionaries:
+                    instance_list.append(cls.create(**elements))
+                    print(instance_list)
+                return instance_list
+
+        except FileNotFoundError:
+            return instance_list

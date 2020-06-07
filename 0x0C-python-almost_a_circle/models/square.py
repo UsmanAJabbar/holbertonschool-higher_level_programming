@@ -143,7 +143,7 @@ class Square(Rectangle):
         """
         attr_dict = {}
         attr_dict['id'] = self.id
-        attr_dict['size'] = self.__size
-        attr_dict['x'] = self.__x
-        attr_dict['y'] = self.__y
+        attr_dict['size'] = self.size
+        attr_dict['x'] = self.x
+        attr_dict['y'] = self.y
         return attr_dict
