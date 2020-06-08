@@ -16,78 +16,228 @@ class TestCases(unittest.TestCase):
         Nil.
     """
 
-    def test_good_input(self):
+    def test_a_id_no_inputs(self):
         """
-        -----------------------
-        METHOD: TEST GOOD INPUT
-        -----------------------
+        ---------
+        TEST: test_a_id_no_inputs
+        ---------
+        Description:
+            Test creating an instance
+            without any input
         """
         o1 = Base()
-        o2 = Base()
-        o3 = Base(12)
-        o4 = Base()
-        o5 = Base()
-
         self.assertEqual(o1.id, 1)
-        self.assertEqual(o2.id, 2)
-        self.assertEqual(o3.id, 12)
-        self.assertEqual(o4.id, 3)
-        self.assertEqual(o5.id, 4)
 
-    def test_docstrings(self):
+    def test_b_id_no_inputs_increment(self):
+        """
+        -----------------------------------
+        TEST: test_b_id_no_inputs_increment
+        -----------------------------------
+        Description:
+            Tests whether the ID is incrementing
+        """
+        o2 = Base()
+        self.assertEqual(o2.id, 2)
+
+    def test_c_manual_id_input(self):
+        """
+        ----------------------------
+        TEST: test_c_manual_id_input
+        ----------------------------
+        Description:
+            Tests whether a manual input works
+        """
+        o3 = Base(12)
+        self.assertEqual(o3.id, 12)
+
+    def test_d_no_input_increment_continued(self):
+        """
+        -----------------------------------------
+        TEST: test_d_no_input_increment_continued
+        -----------------------------------------
+        Description:
+            Tests whether ID continues incrementing
+            normally after assigning a manual ID
+        """
+        o4 = Base()
+        self.assertEqual(o4.id, 3)
+
+    def test_e_class_docstring_check(self):
         """
         -----------------------
-        METHOD: TEST DOCSTRINGS
+        METHOD: test_e_class_docstring_check
         -----------------------
         Description:
-            Tests the existence of docstrings
-            on all of the functions/methods in
-            the class Base.
+            Tests whether a class has a docstring.
         """
         o1 = len(Base().__doc__)
-        o2 = len(Base().__init__.__doc__)
-        o3 = len(Base().to_json_string.__doc__)
-        o4 = len(Base().save_to_file.__doc__)
-        o5 = len(Base().from_json_string.__doc__)
-        o6 = len(Base().create.__doc__)
-        o7 = len(Base().load_from_file.__doc__)
-        o8 = len(Base().save_to_file_csv.__doc__)
-        o9 = len(Base().load_from_file_csv.__doc__)
-
         self.assertTrue(o1 > 0, True)
+
+    def test_f_init_docstring(self):
+        """
+        -----------------------------
+        METHOD: test_f_init_docstring
+        -----------------------------
+        Description:
+            Tests whether the init function has a
+            docstring.
+        """
+        o2 = len(Base().__init__.__doc__)
         self.assertTrue(o2 > 0, True)
+
+    def test_g_to_json_string_docstring(self):
+        """
+        ---------------------------------------
+        METHOD: test_g_from_json_string_doctest
+        ---------------------------------------
+        Description:
+            Tests whether to_json_string
+            function has a docstring.
+        """
+        o3 = len(Base().to_json_string.__doc__)
         self.assertTrue(o3 > 0, True)
+
+    def test_h_save_to_file_docstring(self):
+        """
+        -------------------------------------
+        METHOD: test_h_save_to_file_docstring
+        -------------------------------------
+        Description:
+            Tests whether the save_to_file
+            function has a docstring.
+        """
+        o4 = len(Base().save_to_file.__doc__)
         self.assertTrue(o4 > 0, True)
+
+    def test_i_from_json_string_docstring(self):
+        """
+        -----------------------------------------
+        METHOD: test_i_from_json_string_docstring
+        -----------------------------------------
+        Description:
+            Tests whether the from_json_string
+            function has a docstring.
+        """
+        o5 = len(Base().from_json_string.__doc__)
         self.assertTrue(o5 > 0, True)
+
+    def test_j_create_docstring(self):
+        """
+        -------------------------------
+        METHOD: test_j_create_docstring
+        -------------------------------
+        Description:
+            Tests whether the create function
+            has a docstring.
+        """
+        o6 = len(Base().create.__doc__)
         self.assertTrue(o6 > 0, True)
+
+    def test_k_load_from_file_docstring(self):
+        """
+        ---------------------------------------
+        METHOD: test_k_load_from_file_docstring
+        ---------------------------------------
+        Description:
+            Tests whether the test_k_load_from_file_docstring
+            has a docstring.
+        """
+        o7 = len(Base().load_from_file.__doc__)
         self.assertTrue(o7 > 0, True)
+
+    def test_l_save_to_file_csv_docstring(self):
+        """
+        -----------------------------------------
+        METHOD: test_l_save_to_file_csv_docstring
+        -----------------------------------------
+        Description:
+            Tests whether the save_to_file_csv
+            function has a docstring.
+        """
+        o8 = len(Base().save_to_file_csv.__doc__)
         self.assertTrue(o8 > 0, True)
+
+    def test_m_load_from_file_csv_docstring(self):
+        """
+        -------------------------------------------
+        METHOD: test_m_load_from_file_csv_docstring
+        -------------------------------------------
+        Description:
+            Tests out whether the load_from_file_csv
+            function has a docstring
+        """
+        o9 = len(Base().load_from_file_csv.__doc__)
         self.assertTrue(o9 > 0, True)
 
-    def test_updating_ids(self):
+    def test_n_manual_id_str_input(self):
         """
-        -------------------------
-        METHOD: TEST UPDATING IDS
-        -------------------------
+        ----------------------------------
+        METHOD: test_n_manual_id_str_input
+        ----------------------------------
         Description:
-            Tests the effects of updating the
-            ID attribute with difference data
-            types.
+            Tests whether the ID takes in a
+            string.
         """
         o1 = Base("YEET")
-        o2 = Base(2.76)
-        o3 = Base([1, 2, 3])
-        o4 = Base(("apple", "bananas"))
-        o5 = Base(False)
+        self.assertEqual(o1.id, "YEET")
 
-# From the base class, we need to test:
-# Test if the base class exists
-# Test if the base class gets good input, if no input, class must be initialized
-#     else, anything but an int must raise an error
-# Test if the base class has its id incrementing every single time
-# Try incrementing in the middle, before and after each class creation
-# Check the docstrings in the file and the class
-# Test docstrings on every single fucntion
+    def test_n_manual_id_float_input(self):
+        """
+        ------------------------------------
+        METHOD: test_n_manual_id_float_input
+        ------------------------------------
+        Description:
+            Tests whether the ID takes in a
+            float
+        """
+        o2 = Base(2.76)
+        self.assertEqual(o2.id, 2.76)
+
+    def test_n_manual_id_inf_float_input(self):
+        """
+        ----------------------------------------
+        METHOD: test_n_manual_id_inf_float_input
+        ----------------------------------------
+        Description:
+            Tests whether the id takes in an inf
+            float.
+        """
+        o3 = Base(float('inf'))
+        self.assertEqual(o3.id, float('inf'))
+
+    def test_n_manual_id_list_input(self):
+        """
+        -----------------------------------
+        METHOD: test_n_manual_id_list_input
+        -----------------------------------
+        Description:
+            Tests whether the ID takes in a list.
+        """
+        o4 = Base([1, 2, 3])
+        self.assertEqual(o4.id, [1, 2, 3])
+
+    def test_n_manual_id_tuple_input(self):
+        """
+        ------------------------------------
+        METHOD: test_n_manual_id_tuple_input
+        ------------------------------------
+        Description:
+            Tests whether the ID takes in a
+            tuple.
+        """
+        o5 = Base(("apple", "bananas"))
+        self.assertEqual(o5.id, ("apple", "bananas"))
+
+    def test_n_manual_id_boolean_input(self):
+        """
+        --------------------------------------
+        METHOD: test_n_manual_id_boolean_input
+        --------------------------------------
+        Description:
+            Tests whether the ID takes in a boolean
+        """
+        o6 = Base(False)
+        self.assertEqual(o6.id, False)
 
 if __name__ == "__main__":
     unittest.main()
