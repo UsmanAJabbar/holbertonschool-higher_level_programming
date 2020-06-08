@@ -41,7 +41,10 @@ class Base:
         Args:
             @list_dictionaries: list
         """
-        return json.dumps(list_dictionaries)
+        if list_dictionaries is not None:
+            if type(list_dictionaries) is list:
+                return json.dumps(list_dictionaries)
+        return None
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -59,14 +62,14 @@ class Base:
         filename = cls.__name__ + ".json"
         serialized_dump = []
 
-        if list_objs is not None:
+        if list_objs is not None and type(list_objs) is list:
             for objects in list_objs:
                 serialized_dump.append(objects.to_dictionary())
 
             deserialized = Base.to_json_string(serialized_dump)
 
-            with open(filename, 'w') as jsonfile:
-                jsonfile.write(deserialized)
+        with open(filename, 'w') as jsonfile:
+            jsonfile.write(deserialized)
 
     @staticmethod
     def from_json_string(json_string):
@@ -100,13 +103,17 @@ class Base:
             @dictionary: dictionary containing all the
             values to assign onto the new instance
         """
+        if type(dictionary) is not dict:
+            return None
+
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)  # Added the two neccessary inputs
             dummy.update(**dictionary)
+            return dummy
         elif cls.__name__ == "Square":
             dummy = cls(1)
             dummy.update(**dictionary)
-        return dummy
+            return dummy
 
     @classmethod
     def load_from_file(cls):
@@ -211,19 +218,19 @@ class Base:
                 # DictReader returns a list of dictionaries
                 python_list_of_dictionaries = csv.DictReader(csv_file)
 
+                if type(python_list_of_dictionaries) is not dict:
+                    return []
+
                 #  Loop through each dictionary individually and append
                 #  the instances returned by create accordingly
                 for elements in python_list_of_dictionaries:
-
                     #  Before any appends, convert the values in the dictionary
                     #  to ints before passing to the create function
                     for values in elements:
                         elements[values] = int(elements[values])
-
                     #  Create and update the values from the updated dicts.
                     instance_list.append(cls.create(**elements))
-
                 return instance_list
 
         except FileNotFoundError:
-            return instance_list
+            return []
