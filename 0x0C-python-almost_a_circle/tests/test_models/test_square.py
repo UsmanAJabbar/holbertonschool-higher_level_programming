@@ -99,9 +99,9 @@ class TestCases(unittest.TestCase):
             of keys and values
         """
         s6 = Square(10, 2, 1)
-        expected_output = {'id': 1, 'x': 2, 'size': 10, 'y': 1}
+        expected_output = {'id': 5, 'x': 2, 'size': 10, 'y': 1}
         actual_output = s6.to_dictionary()
-        self.assertEqual(expected_output, expected_output)
+        self.assertEqual(actual_output, expected_output)
 
     def test_g_docstring(self):
         """
