@@ -44,7 +44,7 @@ class Base:
         if list_dictionaries is not None:
             if type(list_dictionaries) is list:
                 return json.dumps(list_dictionaries)
-        return []
+        return "[]"
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -62,14 +62,19 @@ class Base:
         filename = cls.__name__ + ".json"
         serialized_dump = []
 
-        if list_objs is not None and type(list_objs) is list:
-            for objects in list_objs:
-                serialized_dump.append(objects.to_dictionary())
+        if list_objs is None or type(list_objs) is not list:
+            with open(filename, "w") as jsonfile:
+                jsonfile.write("[]")
 
-            deserialized = Base.to_json_string(serialized_dump)
+        else:
+            if list_objs is not None and type(list_objs) is list:
+                for objects in list_objs:
+                    serialized_dump.append(objects.to_dictionary())
 
-        with open(filename, 'w') as jsonfile:
-            jsonfile.write(deserialized)
+                deserialized = Base.to_json_string(serialized_dump)
+
+            with open(filename, 'w') as jsonfile:
+                jsonfile.write(deserialized)
 
     @staticmethod
     def from_json_string(json_string):
