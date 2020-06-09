@@ -197,9 +197,13 @@ class Base:
                     for dictionaries in serialized_dump:
                         writer.writerow(dictionaries)
 
+                else:
+                    with open(filename, "w") as csvfile:
+                        csvfile.write("[]")
+
         except FileNotFoundError:
-            with open(fieldnames, "w") as csvfile:
-                csvfile.write(serialized_dump)
+            with open(filename, "w") as csvfile:
+                csvfile.write("[]")
 
     @classmethod
     def load_from_file_csv(cls):
