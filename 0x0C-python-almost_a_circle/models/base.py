@@ -44,7 +44,7 @@ class Base:
         if list_dictionaries is not None:
             if type(list_dictionaries) is list:
                 return json.dumps(list_dictionaries)
-        return None
+        return []
 
     @classmethod
     def save_to_file(cls, list_objs):

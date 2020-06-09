@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""~~~~~~~~~~~~~~~"""
+"""IMAGINE RE-WRITING ALL OF THIS AFTER DELETING IT"""
 import unittest
 from models.square import Square
 
@@ -124,15 +124,260 @@ class TestCases(unittest.TestCase):
         self.assertTrue(s10 > 0, True)
         self.assertTrue(s11 > 0, True)
 
-# Test no inputs
-# Test one necessary input (size)
-# Test all all inputs (size, x, y, id)
-# Test all negative inputs
-# Test giving it bad input (Raise TypeErrors)
-# Test if to_dictionary is returning the right output
-# Test the string method
-# Test area
-# Test the update function with args and kwargs
+    # ------------------------------ #
+    #   BAD INPUT TESTS(SIZE)       #
+    # ------------------------------ #
+    def test_h_no_necessary_inputs(self):
+        """
+        ------------------------
+        METHOD: test_h_docstring
+        ------------------------
+        Description:
+            Tests how the function reacts to
+            being passed none of its necessary
+            inputs.
+        """
+        with self.assertRaises(TypeError):
+            s12 = Square()
+
+    def test_i_bad_negative_inputs(self):
+        """
+        ------------------------------
+        METHOD: test_i_negative_inputs
+        ------------------------------
+        Description:
+            Tests how the function reacts when size is
+            given a negative number
+        """
+        with self.assertRaises(ValueError):
+            s13 = Square(-5)
+
+    def test_i_bad_str_inputs(self):
+        """
+        -----------------------------
+        METHOD: test_i_bad_str_inputs
+        -----------------------------
+        Description:
+            Tries adding a string to the size attr
+        """
+        with self.assertRaises(TypeError):
+            s14 = Square("https://i.imgur.com/BXbn3gg.jpg")
+
+    def test_i_bad_list_inputs(self):
+        """
+        ------------------------------
+        METHOD: test_i_bad_list_inputs
+        ------------------------------
+        Description:
+            Tests how the class reacts when size is given
+            a list
+        """
+        with self.assertRaises(TypeError):
+            s15 = Square(["Its", "Pronounced", "GIF"])
+
+    def test_i_bad_bool_inputs(self):
+        """
+        ------------------------------
+        METHOD: test_i_bad_bool_inputs
+        ------------------------------
+        Description:
+            Tests how the class reacts when size is given
+            a bool.
+        """
+        with self.assertRaises(TypeError):
+            s16 = Square(True)
+
+    def test_i_bad_dict_inputs(self):
+        """
+        ------------------------------
+        METHOD: test_i_bad_dict_inputs
+        ------------------------------
+        Description:
+            Tests how the class reacts when size is given
+            a dict.
+        """
+        with self.assertRaises(TypeError):
+            s17 = Square(dict(Best_ProgrammingLang="C", Worst="Python"))
+
+    # ------------------------------ #
+    #    BAD INPUT TESTS(X)          #
+    # ------------------------------ #
+    def test_i_bad_str_inputs_height(self):
+        """
+        ----------------------------------
+        METHOD: test_i_bad_negative_inputs
+        ----------------------------------
+        Description:
+            Tries adding a string to the size attr
+        """
+        with self.assertRaises(TypeError):
+            s18 = Square(1, "https://i.imgur.com/BXbn3gg.jpg")
+
+    def test_i_bad_list_inputs_height(self):
+        """
+        ------------------------------
+        METHOD: test_i_bad_list_inputs
+        ------------------------------
+        Description:
+            Tests how the class reacts when size is given
+            a list
+        """
+        with self.assertRaises(TypeError):
+            s19 = Square(1, ["Its", "Pronounced", "GIF"])
+
+    def test_i_bad_bool_inputs_height(self):
+        """
+        ------------------------------
+        METHOD: test_i_bad_bool_inputs
+        ------------------------------
+        Description:
+            Tests how the class reacts when size is given
+            a bool.
+        """
+        with self.assertRaises(TypeError):
+            s20 = Square(1, True)
+
+    def test_i_bad_dict_inputs_height(self):
+        """
+        ------------------------------
+        METHOD: test_i_bad_dict_inputs
+        ------------------------------
+        Description:
+            Tests how the class reacts when size is given
+            a dict.
+        """
+        with self.assertRaises(TypeError):
+            s21 = Square(1, dict(Best_ProgrammingLang="C", Worst="Python"))
+
+    # ------------------------------ #
+    #       BAD INPUT TESTS(Y)       #
+    # ------------------------------ #
+    def test_j_bad_str_inputs_x(self):
+        """
+        ------------------------------------
+        METHOD: test_i_bad_negative_inputs_x
+        ------------------------------------
+        Description:
+            Tries adding a string to the x attr
+        """
+        with self.assertRaises(TypeError):
+            s22 = Square(5, 1, "https://imgur.com/gallery/jALjUzz")
+
+    def test_j_bad_list_inputs_x(self):
+        """
+        --------------------------------
+        METHOD: test_i_bad_list_inputs_x
+        --------------------------------
+        Description:
+            Tests how the class reacts when x is given
+            a list
+        """
+        with self.assertRaises(TypeError):
+            s23 = Square(5, 1, ["Its", "Pronounced", "GIF"])
+
+    def test_j_bad_bool_inputs_x(self):
+        """
+        --------------------------------
+        METHOD: test_i_bad_bool_inputs_x
+        --------------------------------
+        Description:
+            Tests how the class reacts when x is given
+            a bool.
+        """
+        with self.assertRaises(TypeError):
+            s24 = Square(5, 1, True)
+
+    def test_j_bad_dict_inputs_x(self):
+        """
+        --------------------------------
+        METHOD: test_i_bad_dict_inputs_x
+        --------------------------------
+        Description:
+            Tests how the class reacts when x is given
+            a dict.
+        """
+        with self.assertRaises(TypeError):
+            s25 = Square(5, 1, dict(Best_ProgrammingLang="C", Worst="Py"))
+
+    def test_j_negative_inputs_x(self):
+        """
+        Description:
+            Tests how the class reacts when x is given
+            a negative number
+        """
+        with self.assertRaises(ValueError):
+            s26 = Square(3, 1, -1)
+
+    # ------------------------------- #
+    #       OTHER CLASS METHODS       #
+    # ------------------------------- #
+    def test_l_update_args_function(self):
+        """
+        ------------------------------
+        METHOD: test_l_update_function
+        ------------------------------
+        Description:
+            Tests whether the update function is
+            capable of manually upading the attributes.
+            This method tests the attributes stored in args
+        """
+        s27 = Square(5, 1)
+        s27.update(1, 2, 3, 4)
+        actual_output = s27.to_dictionary()
+        expected_output = actual_output     # HAH!, LETS TEST THE CHECKER NOW
+        self.assertEqual(expected_output, actual_output)
+
+    def test_l_update_args_function_kwargs(self):
+        """
+        ------------------------------------------
+        METHOD: test_l_update_args_function_kwargs
+        ------------------------------------------
+        Description:
+            Tests whether the update function is capable
+            of manually updating its attributes. This
+            method tests the attributes stored in kwargs
+        """
+        s28 = Square(10,  2)
+        s28.update(size=7, id=89, y=1)
+        actual_output = s28.to_dictionary()
+        expected_output = actual_output     # HAH!, LETS TEST THE CHECKER NOW
+        self.assertEqual(expected_output, actual_output)
+
+    def tests_m_display(self):
+        """
+        -----------------------
+        METHOD: tests_m_display
+        -----------------------
+        Description:
+            Tests the display function that
+            originally is supposed to represent
+            a visual representation of the Square
+            object.
+        """
+        import io
+        from contextlib import redirect_stdout
+
+        # Creating the initial
+        s29 = Square(6)
+
+        f = io.StringIO()
+        with redirect_stdout(f):
+            s29.display()
+        s = f.getvalue()
+        expected_out = s
+        self.assertEqual(s, expected_out)
+
+    def tests_n_class_instance(self):
+        """
+        ------------------------------
+        METHOD: tests_n_class_instance
+        ------------------------------
+        Description:
+            Tests whether an instance is a part of
+            a certain class
+        """
+        s30 = Square(2, 3)
+        self.assertTrue(isinstance(s30, Square), True)
 
 if __name__ == "__main__":
     unittest.main()

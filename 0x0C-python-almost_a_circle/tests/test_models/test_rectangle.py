@@ -172,7 +172,7 @@ class TestCases(unittest.TestCase):
     def test_i_bad_negative_inputs_width(self):
         """
         ------------------------------
-        METHOD: test_i_negative_inputs  
+        METHOD: test_i_negative_inputs
         ------------------------------
         Description:
             Tests how the function reacts when size is
@@ -184,7 +184,7 @@ class TestCases(unittest.TestCase):
     def test_i_bad_negative_inputs_height(self):
         """
         ------------------------------
-        METHOD: test_i_negative_inputs  
+        METHOD: test_i_negative_inputs
         ------------------------------
         Description:
             Tests how the function reacts when size is
@@ -338,7 +338,7 @@ class TestCases(unittest.TestCase):
             a dict.
         """
         with self.assertRaises(TypeError):
-            r32 = Rectangle(5, 1, dict(Best_ProgrammingLang="C", Worst="Python"))
+            r32 = Rectangle(5, 1, dict(Best_ProgrammingLang="C", Worst="Py"))
 
     def test_j_negative_inputs_x(self):
         """
@@ -397,7 +397,7 @@ class TestCases(unittest.TestCase):
             a dict.
         """
         with self.assertRaises(TypeError):
-            r37 = Rectangle(5, 5, 5, dict(Best_ProgrammingLang="C", Worst="Python"))
+            r37 = Rectangle(5, 5, 5, dict(Best_Programming="C", Worst="Py"))
 
     def test_k_negative_inputs_y(self):
         """

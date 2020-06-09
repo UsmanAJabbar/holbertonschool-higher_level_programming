@@ -210,7 +210,7 @@ class Rectangle(Base):
         # EDGE CASES, Size 1 and 1 (h / w)
         print("\n" * self.__y, end="")
         for height in range(self.__height):
-            print(" " *  self.__x, end="")
+            print(" " * self.__x, end="")
             print("#" * self.__width)
 
     def update(self, *args, **kwargs):
@@ -235,7 +235,7 @@ class Rectangle(Base):
                 would handle it accordingly.
         """
         if args and len(args) > 0:
-            i,argc = 0, len(args)
+            i, argc = 0, len(args)
             for elements in range(5):
                 if args[i]:
                     self.id = args[i]

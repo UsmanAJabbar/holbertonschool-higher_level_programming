@@ -2,6 +2,8 @@
 """YET ANOTHER DOCSTRING"""
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+
 
 class TestCases(unittest.TestCase):
     """
@@ -16,6 +18,9 @@ class TestCases(unittest.TestCase):
         Nil.
     """
 
+    # --------------------------------  #
+    #       INITIALIZATION TESTS        #
+    # --------------------------------  #
     def test_a_id_no_inputs(self):
         """
         ---------
@@ -238,6 +243,51 @@ class TestCases(unittest.TestCase):
         """
         o6 = Base(False)
         self.assertEqual(o6.id, False)
+
+    # --------------------------------  #
+    #       CLASS METHOD TESTS          #
+    # --------------------------------  #
+    def test_o_to_json_string_badinput(self):
+        """
+        --------------------------------------
+        METHOD: test_o_to_json_string_badinput
+        --------------------------------------
+        Description:
+            Tests whether or not the to_json_string
+            method returns None on bad input
+        """
+        o7 = Rectangle(2, 3, 4, 5)
+        returns = o7.to_json_string([])
+        self.assertEqual(returns, '[]')
+
+    def test_o_to_json_string_goodinput(self):
+        """
+        ---------------------------------------
+        METHOD: test_o_to_json_string_goodinput
+        ---------------------------------------
+        Description:
+            Tests what the output from the "to
+            json string" function looks like.
+        """
+        o8 = Rectangle(10, 7, 2, 8, 255)
+        o8_actual_dict = o8.to_dictionary()
+        actual_output = Base.to_json_string([o8_actual_dict])
+        actual_output = Base.from_json_string(actual_output)
+        exp_out = [{'x': 2, 'width': 10, 'id': 255, 'height': 7, 'y': 8}]
+        self.assertEqual(exp_out, actual_output)
+
+    def test_p_create_good_input(self):
+        """
+        -------------------------------
+        METHOD: test_p_create_bad_input
+        -------------------------------
+        Description:
+            Tries giving create bad inputs
+        """
+        o9 = Rectangle(3, 5, 1)
+        o9_dictionary = o9.to_dictionary()
+        o10 = Rectangle.create(**o9_dictionary)
+        self.assertEqual(o10.to_dictionary(), o9_dictionary)
 
 if __name__ == "__main__":
     unittest.main()

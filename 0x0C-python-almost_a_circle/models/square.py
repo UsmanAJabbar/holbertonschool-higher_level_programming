@@ -98,7 +98,7 @@ class Square(Rectangle):
                 would handle it accordingly.
         """
         if args and len(args) > 0:
-            i,argc = 0, len(args)
+            i, argc = 0, len(args)
             for elements in range(4):
                 if args[i]:
                     self.id = args[i]
