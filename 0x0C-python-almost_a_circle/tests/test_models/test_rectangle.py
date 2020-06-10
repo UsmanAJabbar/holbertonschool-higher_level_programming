@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """MAY GOD BLESS THESE 484 LINES"""
 import unittest
+import pep8
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class TestCases(unittest.TestCase):
@@ -13,6 +15,21 @@ class TestCases(unittest.TestCase):
         Tests as many edge cases possible onto
         the Rectangle class.
     """
+
+    def test_a_pep8_model(self):
+        """PEP8 Tests"""
+        pep8test = pep8.StyleGuide(quiet=True)
+        result = pep8test.check_files(['models/rectangle.py'])
+        error = "Found code style errors (and warnings)."
+        self.assertEqual(result.total_errors, 0, error)
+
+    def test_a_pep8_test_model(self):
+        """PEP8 Tests"""
+        pep8test = pep8.StyleGuide(quiet=True)
+        directory = 'tests/test_models/test_rectangle.py'
+        result = pep8test.check_files([directory])
+        error = "Found code style errors (and warnings)."
+        self.assertEqual(result.total_errors, 0, error)
 
     # ------------------------------ #
     #       GENERAL TESTS            #
@@ -28,6 +45,7 @@ class TestCases(unittest.TestCase):
             of the attributes are being assigned
             correctly.
         """
+        Base._Base__nb_objects = 0
         r1 = Rectangle(5, 1)
         self.assertEqual(r1.id, 1)
         self.assertEqual(r1.width, 5)

@@ -2,6 +2,8 @@
 """IMAGINE RE-WRITING ALL OF THIS AFTER DELETING IT"""
 import unittest
 from models.square import Square
+import pep8
+from models.base import Base
 
 
 class TestCases(unittest.TestCase):
@@ -14,6 +16,21 @@ class TestCases(unittest.TestCase):
         the Square class.
     """
 
+    def test_a_pep8_model(self):
+        """PEP8 Tests"""
+        pep8test = pep8.StyleGuide(quiet=True)
+        result = pep8test.check_files(['models/square.py'])
+        error = "Found code style errors (and warnings)."
+        self.assertEqual(result.total_errors, 0, error)
+
+    def test_a_pep8_test_model(self):
+        """PEP8 Tests"""
+        pep8test = pep8.StyleGuide(quiet=True)
+        directory = 'tests/test_models/test_square.py'
+        result = pep8test.check_files([directory])
+        error = "Found code style errors (and warnings)."
+        self.assertEqual(result.total_errors, 0, error)
+
     def test_a_necessary_inputs(self):
         """
         -----------------------------
@@ -25,6 +42,7 @@ class TestCases(unittest.TestCase):
             of the attributes are being assigned
             correctly.
         """
+        Base._Base__nb_objects = 0
         s1 = Square(5)
         self.assertEqual(s1.id, 1)
         self.assertEqual(s1.size, 5)
