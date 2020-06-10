@@ -198,7 +198,7 @@ class Base:
                         writer.writerow(dictionaries)
 
                 else:
-                    with open(filename, "w") as csvfile:
+                    with open(filename, 'w') as csvfile:
                         csvfile.write("[]")
 
         except FileNotFoundError:
@@ -226,9 +226,6 @@ class Base:
             with open(filename) as csv_file:
                 # DictReader returns a list of dictionaries
                 python_list_of_dictionaries = csv.DictReader(csv_file)
-
-                if type(python_list_of_dictionaries) is not dict:
-                    return []
 
                 #  Loop through each dictionary individually and append
                 #  the instances returned by create accordingly
