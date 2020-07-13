@@ -1,0 +1,3 @@
+-- Adds a new row of data to
+-- a given table
+INSERT INTO `first_table` (`id`, `name`) VALUES ('89', 'Holberton School');
