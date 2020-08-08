@@ -15,8 +15,7 @@ if __name__ == "__main__":
     lookup = db.cursor()
 
     # Use the cursor to execute the command
-    lookup.execute("SELECT * FROM states WHERE name='{}'\
-                    ORDER BY states.id ASC;".format(search))
+    lookup.execute("SELECT * FROM states WHERE name='{}'".format(search))
 
     # Fetch all the data
     ma_dayta = lookup.fetchall()
