@@ -18,7 +18,7 @@ if __name__ == "__main__":
     session = Session()
 
     # Pulls out all the states with an 'a' in them
-    result = session.query(State).filter(State.name.like('%a%')).all
+    result = session.query(State).filter(State.name.like('%a%')).all()
 
     # Loop through and delete all of them individually
     for states in result:
