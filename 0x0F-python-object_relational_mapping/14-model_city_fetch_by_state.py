@@ -19,7 +19,8 @@ if __name__ == "__main__":
     session = Session()
 
     # Join the necessary tables accordingly
-    result = session.query(City, State).join(State, City.state_id == State.id).all()
+    result = session.query(City, State).join(State,
+                                             City.state_id == State.id).all()
 
     # Loop through both of them
     for cities, states in result:
