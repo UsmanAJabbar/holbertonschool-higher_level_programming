@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Adds Louisiana to the database"""
 
 
@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     # Connect to the database
     user, passwd, database = argv[1], argv[2], argv[3]
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.\
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
                            format(user, passwd, database), pool_pre_ping=True)
 
     # Bind the database details and create a session
@@ -22,9 +22,4 @@ if __name__ == "__main__":
     session.add(new_state)
     session.commit()
 
-    # Fetch the ID assigned to new_state
-    results = session.query(State).filter(State.name == 'Louisiana')
-
-    # Print the ID
-    for id in results:
-        print(id.id)
+    print(new_state.id)
