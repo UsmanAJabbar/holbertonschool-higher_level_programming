@@ -22,6 +22,6 @@ if __name__ == "__main__":
 
     if results != []:
         for states in results:
-            print('{}'.format(states.id))
+            print(states.id)
     else:
         print('Not Found')
