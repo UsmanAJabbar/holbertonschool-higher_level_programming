@@ -9,7 +9,7 @@ if __name__ == "__main__":
     from sqlalchemy import (create_engine)
 
     # Connect to the database
-    user, passwd, database, search_term = argv[1], argv[2], argv[3], argv[4]
+    user, passwd, database = argv[1], argv[2], argv[3]
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
                            format(user, passwd, database), pool_pre_ping=True)
 
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     session = Session()
 
     # Fetch results by generating a query
-    results = session.query(State).filter(State.name == search_term).all()
+    results = session.query(State).filter(State.name == argv[4]).all()
 
     if results != []:
         for states in results:
