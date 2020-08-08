@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # Fetch results by generating a query
     results = session.query(State).filter(State.name == search_term).all()
 
-    if results:
+    if results != []:
         for states in results:
             print('{}'.format(states.id))
     else:
