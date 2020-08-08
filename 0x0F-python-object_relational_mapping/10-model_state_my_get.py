@@ -18,14 +18,10 @@ if __name__ == "__main__":
     session = Session()
 
     # Fetch results by generating a query
-    results = session.query(State).filter(State.name == search_term)
+    results = session.query(State).filter(State.name == search_term).all()
 
-    # Checks if the print statement triggered, and prints out the result
-    tick = 0
-    for states in results:
-        print('{}'.format(states.id))
-        tick = 1
-
-    # If tick never triggered, then never found
-    if tick != 1:
+    if results:
+        for states in results:
+            print('{}'.format(states.id))
+    else:
         print('Not Found')
