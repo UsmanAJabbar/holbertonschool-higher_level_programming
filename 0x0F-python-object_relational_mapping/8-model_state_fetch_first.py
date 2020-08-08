@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Lists the first state in the table"""
 
 
@@ -19,4 +19,8 @@ if __name__ == "__main__":
 
     states = session.query(State).first()
 
-    print('{}: {}'.format(states.id, states.name))
+    if states.id:
+        print('{}: {}'.format(states.id, states.name))
+
+    else:
+        print('Nothing')
