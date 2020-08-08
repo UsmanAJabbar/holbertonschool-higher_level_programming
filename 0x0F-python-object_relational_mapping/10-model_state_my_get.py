@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Takes in a search query and returns the id if it exists"""
-
-
 if __name__ == "__main__":
     from sys import argv
     from model_state import Base, State
