@@ -10,11 +10,11 @@ if __name__ == "__main__":
 
     # Connect to the database
     user, passwd, database = argv[1], argv[2], argv[3]
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.\
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
                            format(user, passwd, database), pool_pre_ping=True)
 
     # Bind the database details and create a session
-    Session = sessionmaker(bind = engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
 
     states = session.query(State).first()
