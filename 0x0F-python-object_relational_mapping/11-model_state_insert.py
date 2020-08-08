@@ -14,11 +14,11 @@ if __name__ == "__main__":
                            format(user, passwd, database), pool_pre_ping=True)
 
     # Bind the database details and create a session
-    Session = sessionmaker(bind = engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
 
     # Create a new object with the necessary properties, then commit to push
-    new_state = State(name = 'Louisiana')
+    new_state = State(name='Louisiana')
     session.add(new_state)
     session.commit()
 
