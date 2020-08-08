@@ -4,37 +4,6 @@ from sys import argv
 import MySQLdb
 
 
-#  ----------------   TASK ---------------
-# Write a script that lists all cities from the database hbtn_0e_4_usa
-#
-# Your script should take 3 arguments:
-        # mysql username,
-        # mysql password
-        # and database name
-# You must use the module MySQLdb (import MySQLdb)
-# Your script should connect to a MySQL server running on
-        # localhost at port 3306
-# Results must be sorted in ascending order by cities.id
-# You can use only execute() once
-# Results must be displayed as they are in the example below
-# Your code should not be executed when imported
-
-# ----------------- MASTER PLAN -------------------
-# Pull in the valus from argv
-# Our python script is going to be executed with args in this format
-#                       ./0-select_states.py root root hbtn_0e_0_usa
-
-# With the arguments finally in, now's the time to give the args to
-# the MYSQL.connect module
-# -   USAGE: db = MySQLdb.connect(host=MY_HOST,
-#                                 user=MY_USER, passwd=MY_PASS, db=MY_DB)
-# -   Then, execute the ||| cur = db.cursor() ||| module
-# -   Then, enter your SQL commands in the exec module:
-# -                 cur.execute("SQL QUERY")
-# -                 rows = cur.fetchall() - This command pulls all the data
-# -                 and then we would print out the details with a for loop
-# -   Close the connections on the cursor, followed by the database
-
 if __name__ == "__main__":
 
     # Rename and set the varibles for readability
