@@ -12,5 +12,5 @@ def find_peak(list_of_integers):
     Args:
         List with integers exclusively.
     """
-    in = list_of_integers
-    return in if len(in) == 0 else max(in)
+    yeet = list_of_integers
+    return yeet if len(yeet) == 0 else max(yeet)
