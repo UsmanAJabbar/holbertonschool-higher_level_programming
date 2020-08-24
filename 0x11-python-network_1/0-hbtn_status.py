@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from urllib import request
 """A DUMB COMMENT"""
+from urllib import request
 
 
 if __name__ == "__main__":
