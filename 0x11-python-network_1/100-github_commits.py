@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     count = 0
     for elements in dictionary:
-        print(elements['sha'])
+        print(elements['sha'], elements['commit']['author']['name'])
         count += 1
         if count == 10:
             break
