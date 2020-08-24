@@ -11,5 +11,5 @@ if __name__ == "__main__":
     parameters = {'email': email}
 
     # Process data
-    response = requests.post('url', parameters)
+    response = requests.post(url, data=parameters)
     print(response.text)
