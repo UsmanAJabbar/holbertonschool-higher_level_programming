@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""SOME DOCSTRING"""
 
 
 if __name__ == "__main__":
@@ -14,5 +15,5 @@ if __name__ == "__main__":
 #    req = request.Request(url, data=data)
 
     with urllib.request.urlopen(url, data) as response:
-        out = response.read()
+        out = response.read().decode()
         print(out.decode('utf-8'))
