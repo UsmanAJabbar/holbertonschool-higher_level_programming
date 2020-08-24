@@ -8,5 +8,9 @@ if __name__ == "__main__":
 
     url, user, token = 'https://api.github.com/user', argv[1], argv[2]
     out = requests.get(url, auth=(user, token))
-    id = (out.json()['id'])
-    print(id)
+
+    try:
+        id = (out.json()['id'])
+        print(id)
+    except KeyError:
+        print('None')
