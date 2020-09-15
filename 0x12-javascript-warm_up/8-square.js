@@ -7,15 +7,17 @@
  * @sq_size: size of the square
  * Return: None
  */
-function square (sq_size) {
+function square (SQsize) {
   let buffer = '';
-  const size = parseInt(sq_size);
+  const size = parseInt(SQsize);
 
   for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
       buffer += 'X';
     }
-    i !== size - 1 ? buffer += '\n' : {};
+    if (i !== size - 1) {
+      buffer += '\n';
+    }
   }
   console.log(buffer);
 }
