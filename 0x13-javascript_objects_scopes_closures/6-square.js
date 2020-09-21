@@ -1,12 +1,9 @@
 #!/usr/bin/node
 // Generates a square class
-const Rectangle = require('./4-rectangle');
-module.exports = class Square extends Rectangle {
-  // Class attribute generator
-  constructor (size) {
-    super(size, size);
-  }
-  charPrint (c) {
-    this.print(c)
-  }
+const LastGenSquare = require('./5-square');
+module.exports = class Square extends LastGenSquare {
+  // Dynamically calls on the print function with
+  // a preset character that prints a visualization
+  // of the rectangle/square class
+  charPrint (c) { this.print(c); }
 };
