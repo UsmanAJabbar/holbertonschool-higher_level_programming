@@ -12,7 +12,7 @@ module.exports = class Rectangle {
   // Triggers the print function
   print (char) {
     let buffer = '';
-    if (char == undefined) { char = 'X'}
+    if (char === undefined) { char = 'X'; }
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j < this.width; j++) { buffer += char; }
       if (i !== this.height - 1) { buffer += '\n'; }
