@@ -3,7 +3,7 @@
 module.exports = class Rectangle {
   // Constructors | Attribute Generators
   constructor (width, height) {
-    if (width > 1 && height > 1) {
+    if (width > 0 && height > 0) {
       this.width = width;
       this.height = height;
     }
