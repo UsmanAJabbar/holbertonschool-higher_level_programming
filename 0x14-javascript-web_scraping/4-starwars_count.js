@@ -25,8 +25,8 @@ function corgi (body, character) {
 
   for (let index = 0; index < size; index++) {
     for (let jindex = 0; jindex < body.results[index].characters.length; jindex++) {
-      if (body.results[index].characters[jindex] === character) {
-        count += 1
+      if (body.results[index].characters[jindex].includes('18')) {
+        count += 1;
       }
     }
   }
