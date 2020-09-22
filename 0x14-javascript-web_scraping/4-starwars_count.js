@@ -24,7 +24,11 @@ function corgi (body, character) {
   let count = 0;
 
   for (let index = 0; index < size; index++) {
-    count = (body.results[index].characters.includes(character)) ? count += 1 : count += 0;
+    for (let jindex = 0; jindex < body.results[index].characters.length; jindex++) {
+      if (body.results[index].characters[jindex] === character) {
+        count += 1
+      }
+    }
   }
   return count;
 }
