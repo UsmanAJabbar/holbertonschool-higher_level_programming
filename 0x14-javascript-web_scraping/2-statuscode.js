@@ -5,5 +5,5 @@ const req = require('request');
 const endpoint = process.argv[2];
 
 req(endpoint, function (err, res, body) {
-  res.statusCode = !(err) ? console.log(res.statusCode) : {};
+  res.statusCode = !(err) ? console.log('code:', res.statusCode) : {};
 });
