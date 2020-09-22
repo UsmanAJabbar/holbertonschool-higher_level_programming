@@ -2,11 +2,11 @@
 // Prints the title of a specific Star Wars
 // film found on the custom API https://swapi-api.hbtn.io/
 const req = require('request');
-const end = 'https://swapi-api.hbtn.io/api/films/';
-const characterid = process.argv[2];
+const end = process.argv[2];
+const characterid = '18';
 const character = 'https://swapi-api.hbtn.io/api/people/' + characterid + '/';
 
-if (characterid !== undefined) {
+if (end !== undefined) {
   req(end, function (err, res, body) {
     err = !(err) ? console.log(corgi(JSON.parse(body), character)) : console.log(err);
   });
