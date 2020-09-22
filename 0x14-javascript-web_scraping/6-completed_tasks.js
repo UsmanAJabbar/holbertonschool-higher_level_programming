@@ -9,18 +9,14 @@ if (url !== undefined) {
     const tasks = {};
 
     for (var objects of json) {
-
-      // If the user ID doesn't exist in the dictionary, add it
-      if (tasks[objects['userId']] === undefined) {
-        tasks[objects['userId']] = 0;
+      if (tasks[objects.userId] === undefined) {
+        tasks[objects.userId] = 0;
       }
 
-      // Else, check if the task was completed
-      if (objects['completed']) {
-        tasks[objects['userId']] += 1;
+      if (objects.completed) {
+        tasks[objects.userId] += 1;
       }
-
     }
-    console.log(tasks)
+    console.log(tasks);
   });
 }
