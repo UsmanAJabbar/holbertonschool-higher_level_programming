@@ -10,7 +10,7 @@ if (url !== undefined) {
 
     for (const objects of json) {
       // If the user ID doesn't exist in the dictionary, add it
-      if (tasks[objects.userId] === undefined) {
+      if (tasks[objects.userId] === undefined && objects.completed) {
         tasks[objects.userId] = 0;
       }
 
