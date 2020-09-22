@@ -3,12 +3,10 @@
 // film found on the custom API https://swapi-api.hbtn.io/
 const req = require('request');
 const end = process.argv[2];
-const characterid = '18';
-const character = 'https://swapi-api.hbtn.io/api/people/' + characterid + '/';
 
 if (end !== undefined) {
   req(end, function (err, res, body) {
-    err = !(err) ? console.log(corgi(JSON.parse(body), character)) : console.log(err);
+    err = !(err) ? console.log(corgi(JSON.parse(body))) : console.log(err);
   });
 }
 
@@ -16,16 +14,16 @@ if (end !== undefined) {
  * corgi - this cute prototype of a wabbit
  * is about to sniff out how many times a
  * character was found in the custom API, end
- * @character: character that needs to be found
+ * @json: json object as input
  * Return: number of times character was found
  */
-function corgi (body, character) {
-  const size = body.results.length;
+function corgi (json) {
+  const size = json.results.length;
   let count = 0;
 
   for (let index = 0; index < size; index++) {
-    for (let jindex = 0; jindex < body.results[index].characters.length; jindex++) {
-      if (body.results[index].characters[jindex].includes('18')) {
+    for (let jindex = 0; jindex < json.results[index].characters.length; jindex++) {
+      if (json.results[index].characters[jindex].includes('18')) {
         count += 1;
       }
     }
