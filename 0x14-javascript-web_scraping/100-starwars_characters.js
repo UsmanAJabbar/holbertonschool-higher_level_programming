@@ -2,22 +2,24 @@
 // Prints out the names of all the characters
 // that played in a specific movie
 const req = require('request');
-const movieId = process.argv[2];
-const endpoint = 'https://swapi-api.hbtn.io/api/films/' + movieId;
+let movieId = process.argv[2]
+let endpoint = 'https://swapi-api.hbtn.io/api/films/' + movieId
 
 if (!isNaN(movieId)) {
   req(endpoint, (err, res, jsonstr) => {
-    const json = JSON.parse(jsonstr);
+    let json = JSON.parse(jsonstr);
+    let cast = [];
 
-    for (var CharacterEndpoint of json.characters) {
-      name(CharacterEndpoint);
+    for (CharacterEndpoint of json['characters']) {
+      name_extractor(CharacterEndpoint);
     }
   });
 }
 
-function name (CharacterApiUrl) {
+function name_extractor (CharacterApiUrl) {
   req(CharacterApiUrl, (err, res, jsonstr) => {
-    const json = JSON.parse(jsonstr);
+    let json = JSON.parse(jsonstr);
+
     console.log(json['name']);
   });
 }
